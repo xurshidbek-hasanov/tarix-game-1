@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ijtimoiy islohotlar tarixi — jamoaviy o‘yin</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Nunito+Sans:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body data-era="-1">
+<div class="sky"></div>
+<canvas id="fx" aria-hidden="true"></canvas>
+<svg class="skyline" viewBox="0 0 1200 220" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
+  <g fill="currentColor">
+    <rect x="0" y="190" width="1200" height="30"/>
+    <rect x="470" y="70" width="260" height="130"/>
+    <path d="M470 70 Q600 -10 730 70Z"/>
+    <rect x="448" y="30" width="20" height="170"/><rect x="732" y="30" width="20" height="170"/>
+    <ellipse cx="458" cy="28" rx="14" ry="12"/><ellipse cx="742" cy="28" rx="14" ry="12"/>
+    <rect x="250" y="130" width="190" height="70"/><rect x="760" y="130" width="190" height="70"/>
+    <ellipse cx="345" cy="130" rx="46" ry="40"/><ellipse cx="855" cy="130" rx="46" ry="40"/>
+    <rect x="100" y="160" width="130" height="40"/><rect x="970" y="160" width="130" height="40"/>
+    <ellipse cx="165" cy="160" rx="30" ry="24"/><ellipse cx="1035" cy="160" rx="30" ry="24"/>
+  </g>
+  <path class="arch" d="M550 200 V120 Q600 40 650 120 V200Z"/>
+</svg>
+
+<main>
+  <section id="start" class="screen">
+    <p class="kicker">O‘zbekistonda ijtimoiy sohadagi islohotlar</p>
+    <h1>Islohotlar yo‘li</h1>
+    <p class="lead">Jamoalar navbat bilan savol tanlaydi. To‘g‘ri javob — ball. Eng ko‘p ball yig‘gan jamoa g‘olib.</p>
+    <div class="count" role="group" aria-label="Jamoalar soni"></div>
+    <div id="names"></div>
+    <button id="go" class="btn">O‘yinni boshlash</button>
+  </section>
+
+  <section id="game" class="screen" hidden>
+    <div class="top">
+      <div id="scores" class="scores"></div>
+      <button id="mute" class="icon" aria-label="Ovozni o‘chirish/yoqish">♪</button>
+    </div>
+    <p id="turn" class="turn"></p>
+    <div id="board" class="board"></div>
+  </section>
+
+  <section id="end" class="screen" hidden>
+    <h2>G‘olib aniqlandi</h2>
+    <div id="podium" class="podium"></div>
+    <button id="again" class="btn">Qayta o‘ynash</button>
+  </section>
+</main>
+
+<div id="modal" class="modal" hidden>
+  <div class="card" role="dialog" aria-modal="true" aria-labelledby="qtext">
+    <div class="meta"><span id="qcat"></span><span id="qpts"></span></div>
+    <div class="timer"><i id="bar"></i></div>
+    <h3 id="qtext"></h3>
+    <div id="opts" class="opts"></div>
+    <p id="fb" class="fb"></p>
+    <button id="next" class="btn" hidden>Davom etish</button>
+  </div>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
